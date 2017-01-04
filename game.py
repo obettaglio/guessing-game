@@ -16,7 +16,8 @@ name = raw_input("Welcome! What is your name? ")
 print "%s, I'm thinking of a number between 1 and 100." % name
 our_number = randint(1, 100)
 num_guesses = 1
-while True:
+replay = True
+while replay is True:
     guess = raw_input("What is your guess? ")
     try:
         val = int(guess)
@@ -36,7 +37,12 @@ while True:
             num_guesses += 1
     else:
         print "Congratulations, %s! You found it in %s tries." % (name, num_guesses)
-        break
+        choice = raw_input("That was fun. If you would like to play again, enter Y. ")
+        if choice != "Y":
+            replay = False
+        else:
+            our_number = randint(1, 100)
+
 
 # if 0 < guess < our_number:
 #             print "Your guess is too low. Try again."
