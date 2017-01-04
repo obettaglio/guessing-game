@@ -9,16 +9,15 @@
 #        increase number of guesses
 #    else:
 #        congratulate player
+
 from random import randint
 
 name = raw_input("Welcome! What is your name? ")
 print "%s, I'm thinking of a number between 1 and 100." % name
 our_number = randint(1, 100)
-print our_number
 num_guesses = 1
 while True:
     guess = int(raw_input("What is your guess? "))
-    print guess
     if guess != our_number:
         if guess < our_number:
             print "Your guess is too low. Try again."
